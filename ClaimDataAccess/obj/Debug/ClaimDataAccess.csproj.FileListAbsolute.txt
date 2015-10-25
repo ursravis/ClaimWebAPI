@@ -1,0 +1,7 @@
+C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\ClaimDataAccess.dll.config
+C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\ClaimDataAccess.dll
+C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\ClaimDataAccess.pdb
+C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\EntityFramework.dll
+C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\EntityFramework.xml
+C:\Personal\ProcessClaimService\ClaimDataAccess\obj\Debug\ClaimDataAccess.dll
+C:\Personal\ProcessClaimService\ClaimDataAccess\obj\Debug\ClaimDataAccess.pdb

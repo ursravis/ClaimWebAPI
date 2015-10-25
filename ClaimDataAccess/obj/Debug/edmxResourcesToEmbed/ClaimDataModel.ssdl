@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClaimDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CauseType">
+    <Key>
+      <PropertyRef Name="CauseTypeId" />
+    </Key>
+    <Property Name="CauseTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CauseTypeCode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Claim">
+    <Key>
+      <PropertyRef Name="ClaimId" />
+    </Key>
+    <Property Name="ClaimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClaimantFirstName" Type="varchar" MaxLength="500" />
+    <Property Name="ClaimantLastName" Type="varchar" MaxLength="500" />
+    <Property Name="ClaimStatus" Type="int" />
+    <Property Name="AssignedAdjusterID" Type="bigint" />
+    <Property Name="LossDate" Type="datetime" />
+    <Property Name="CauseOfLoss" Type="int" />
+    <Property Name="ReportedDate" Type="datetime" />
+    <Property Name="LossDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ClaimStatusType">
+    <Key>
+      <PropertyRef Name="StatusTypeId" />
+    </Key>
+    <Property Name="StatusTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ClaimVechicles">
+    <Key>
+      <PropertyRef Name="ClaimVehicleId" />
+    </Key>
+    <Property Name="ClaimVehicleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimId" Type="int" Nullable="false" />
+    <Property Name="VehicleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleId" />
+    </Key>
+    <Property Name="VehicleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelYear" Type="int" Nullable="false" />
+    <Property Name="MakeDescription" Type="nvarchar(max)" />
+    <Property Name="ModelDescription" Type="nvarchar(max)" />
+    <Property Name="EngineDescription" Type="nvarchar(max)" />
+    <Property Name="ExteriorColor" Type="varchar" MaxLength="50" />
+    <Property Name="Vin" Type="varchar" MaxLength="50" />
+    <Property Name="LicPlate" Type="varchar" MaxLength="50" />
+    <Property Name="LicPlateState" Type="varchar" MaxLength="50" />
+    <Property Name="LicPlateExpDate" Type="date" />
+    <Property Name="DamageDescription" Type="varchar(max)" />
+    <Property Name="Mileage" Type="int" />
+  </EntityType>
+  <Association Name="FK_Claim_Cause">
+    <End Role="CauseType" Type="Self.CauseType" Multiplicity="0..1" />
+    <End Role="Claim" Type="Self.Claim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CauseType">
+        <PropertyRef Name="CauseTypeId" />
+      </Principal>
+      <Dependent Role="Claim">
+        <PropertyRef Name="CauseOfLoss" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Claim_ClaimStatus">
+    <End Role="ClaimStatusType" Type="Self.ClaimStatusType" Multiplicity="0..1" />
+    <End Role="Claim" Type="Self.Claim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClaimStatusType">
+        <PropertyRef Name="StatusTypeId" />
+      </Principal>
+      <Dependent Role="Claim">
+        <PropertyRef Name="ClaimStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClaimVechicles_Claim">
+    <End Role="Claim" Type="Self.Claim" Multiplicity="1" />
+    <End Role="ClaimVechicles" Type="Self.ClaimVechicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Claim">
+        <PropertyRef Name="ClaimId" />
+      </Principal>
+      <Dependent Role="ClaimVechicles">
+        <PropertyRef Name="ClaimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClaimVechicles_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
+    <End Role="ClaimVechicles" Type="Self.ClaimVechicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="VehicleId" />
+      </Principal>
+      <Dependent Role="ClaimVechicles">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClaimDatabaseModelStoreContainer">
+    <EntitySet Name="CauseType" EntityType="Self.CauseType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Claim" EntityType="Self.Claim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClaimStatusType" EntityType="Self.ClaimStatusType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClaimVechicles" EntityType="Self.ClaimVechicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Claim_Cause" Association="Self.FK_Claim_Cause">
+      <End Role="CauseType" EntitySet="CauseType" />
+      <End Role="Claim" EntitySet="Claim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Claim_ClaimStatus" Association="Self.FK_Claim_ClaimStatus">
+      <End Role="ClaimStatusType" EntitySet="ClaimStatusType" />
+      <End Role="Claim" EntitySet="Claim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClaimVechicles_Claim" Association="Self.FK_ClaimVechicles_Claim">
+      <End Role="Claim" EntitySet="Claim" />
+      <End Role="ClaimVechicles" EntitySet="ClaimVechicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClaimVechicles_Vehicle" Association="Self.FK_ClaimVechicles_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="ClaimVechicles" EntitySet="ClaimVechicles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

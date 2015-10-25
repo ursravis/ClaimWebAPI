@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClaimDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CauseType">
+    <Key>
+      <PropertyRef Name="CauseTypeId" />
+    </Key>
+    <Property Name="CauseTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CauseTypeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Claims" Relationship="Self.FK_Claim_Cause" FromRole="CauseType" ToRole="Claim" />
+  </EntityType>
+  <EntityType Name="Claim">
+    <Key>
+      <PropertyRef Name="ClaimId" />
+    </Key>
+    <Property Name="ClaimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClaimantFirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimantLastName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimStatus" Type="Int32" />
+    <Property Name="AssignedAdjusterID" Type="Int64" />
+    <Property Name="CauseOfLoss" Type="Int32" />
+    <Property Name="ReportedDate" Type="DateTime" Precision="3" />
+    <Property Name="LossDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CauseType" Relationship="Self.FK_Claim_Cause" FromRole="Claim" ToRole="CauseType" />
+    <NavigationProperty Name="ClaimStatusType" Relationship="Self.FK_Claim_ClaimStatus" FromRole="Claim" ToRole="ClaimStatusType" />
+    <NavigationProperty Name="ClaimVechicles" Relationship="Self.FK_ClaimVechicles_Claim" FromRole="Claim" ToRole="ClaimVechicles" />
+    <Property Name="LossDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ClaimStatusType">
+    <Key>
+      <PropertyRef Name="StatusTypeId" />
+    </Key>
+    <Property Name="StatusTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Claims" Relationship="Self.FK_Claim_ClaimStatus" FromRole="ClaimStatusType" ToRole="Claim" />
+  </EntityType>
+  <EntityType Name="ClaimVechicle">
+    <Key>
+      <PropertyRef Name="ClaimVehicleId" />
+    </Key>
+    <Property Name="ClaimVehicleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimId" Type="Int32" Nullable="false" />
+    <Property Name="VehicleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Claim" Relationship="Self.FK_ClaimVechicles_Claim" FromRole="ClaimVechicles" ToRole="Claim" />
+    <NavigationProperty Name="Vehicle" Relationship="Self.FK_ClaimVechicles_Vehicle" FromRole="ClaimVechicles" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleId" />
+    </Key>
+    <Property Name="VehicleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelYear" Type="Int32" Nullable="false" />
+    <Property Name="MakeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModelDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EngineDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExteriorColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LicPlate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LicPlateState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LicPlateExpDate" Type="DateTime" Precision="0" />
+    <Property Name="DamageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mileage" Type="Int32" />
+    <NavigationProperty Name="ClaimVechicles" Relationship="Self.FK_ClaimVechicles_Vehicle" FromRole="Vehicle" ToRole="ClaimVechicles" />
+  </EntityType>
+  <Association Name="FK_Claim_Cause">
+    <End Role="CauseType" Type="Self.CauseType" Multiplicity="0..1" />
+    <End Role="Claim" Type="Self.Claim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CauseType">
+        <PropertyRef Name="CauseTypeId" />
+      </Principal>
+      <Dependent Role="Claim">
+        <PropertyRef Name="CauseOfLoss" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Claim_ClaimStatus">
+    <End Role="ClaimStatusType" Type="Self.ClaimStatusType" Multiplicity="0..1" />
+    <End Role="Claim" Type="Self.Claim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClaimStatusType">
+        <PropertyRef Name="StatusTypeId" />
+      </Principal>
+      <Dependent Role="Claim">
+        <PropertyRef Name="ClaimStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClaimVechicles_Claim">
+    <End Role="Claim" Type="Self.Claim" Multiplicity="1" />
+    <End Role="ClaimVechicles" Type="Self.ClaimVechicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Claim">
+        <PropertyRef Name="ClaimId" />
+      </Principal>
+      <Dependent Role="ClaimVechicles">
+        <PropertyRef Name="ClaimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClaimVechicles_Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
+    <End Role="ClaimVechicles" Type="Self.ClaimVechicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="VehicleId" />
+      </Principal>
+      <Dependent Role="ClaimVechicles">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClaimDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CauseTypes" EntityType="Self.CauseType" />
+    <EntitySet Name="Claims" EntityType="Self.Claim" />
+    <EntitySet Name="ClaimStatusTypes" EntityType="Self.ClaimStatusType" />
+    <EntitySet Name="ClaimVechicles" EntityType="Self.ClaimVechicle" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+    <AssociationSet Name="FK_Claim_Cause" Association="Self.FK_Claim_Cause">
+      <End Role="CauseType" EntitySet="CauseTypes" />
+      <End Role="Claim" EntitySet="Claims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Claim_ClaimStatus" Association="Self.FK_Claim_ClaimStatus">
+      <End Role="ClaimStatusType" EntitySet="ClaimStatusTypes" />
+      <End Role="Claim" EntitySet="Claims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClaimVechicles_Claim" Association="Self.FK_ClaimVechicles_Claim">
+      <End Role="Claim" EntitySet="Claims" />
+      <End Role="ClaimVechicles" EntitySet="ClaimVechicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClaimVechicles_Vehicle" Association="Self.FK_ClaimVechicles_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="ClaimVechicles" EntitySet="ClaimVechicles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

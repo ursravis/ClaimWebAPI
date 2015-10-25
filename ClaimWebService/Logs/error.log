@@ -1,0 +1,77 @@
+2015-10-22 14:15:49,506 [11] ERROR Exceptions - Object reference not set to an instance of an object.Stack Trace :    at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 27
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__2.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 23
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-22 16:33:06,786 [23] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-22 16:47:40,305 [9] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-23 14:37:30,506 [14] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-23 14:38:29,981 [20] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()

@@ -1,0 +1,1165 @@
+2015-10-22 14:12:07,359 [6] INFO  RequestResponse - URL: http://localhost:38499/Claims/Id/1 Method: GET, Route: , RequestContent: ,
+2015-10-22 14:12:07,892 [13] INFO  RequestResponse - ResponseContent: System.Threading.Tasks.Task`1[System.String]
+2015-10-22 14:14:51,190 [7] INFO  RequestResponse - URL: http://localhost:38499/Claims/Id/1 Method: GET, Route: , RequestContent: ,
+2015-10-22 14:14:58,167 [11] INFO  RequestResponse - ResponseContent: <?xml version="1.0" encoding="utf-8"?><cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim"><cla:ClaimId>1</cla:ClaimId><cla:ClaimNumber>22c9c23bac142856018ce14a26b6c299</cla:ClaimNumber><cla:ClaimantFirstName>George</cla:ClaimantFirstName><cla:ClaimantLastName>Washington</cla:ClaimantLastName><cla:LossDate>2014-07-09T17:19:13.63</cla:LossDate><cla:LossInfo><cla:CauseOfLoss>Collision</cla:CauseOfLoss><cla:ReportedDate>2014-07-10T17:19:13.677</cla:ReportedDate><cla:LossDescription>Crashed into an apple tree.</cla:LossDescription></cla:LossInfo><cla:AssignedAdjusterID>12345</cla:AssignedAdjusterID><cla:Vehicles><cla:VehicleDetails><cla:VehicleId>1</cla:VehicleId><cla:ModelYear>2015</cla:ModelYear><cla:MakeDescription>Ford</cla:MakeDescription><cla:ModelDescription>Mustang</cla:ModelDescription><cla:EngineDescription>EcoBoost</cla:EngineDescription><cla:ExteriorColor>Deep Impact Blue</cla:ExteriorColor><cla:Vin>1M8GDM9AXKP042788</cla:Vin><cla:LicPlate>NO1PRES</cla:LicPlate><cla:LicPlateState>VA</cla:LicPlateState><cla:LicPlateExpDate>2015-03-10T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>Front end smashed in. Apple dents in roof.</cla:DamageDescription><cla:Mileage>1776</cla:Mileage></cla:VehicleDetails></cla:Vehicles></cla:MitchellClaim>
+2015-10-22 14:15:46,704 [15] INFO  RequestResponse - URL: http://localhost:38499/Claims/CreateClaim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>sample string 5</cla:Status>
+  <cla:LossDate>2015-10-22T14:15:42.6747538-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-22T14:15:42.6747538-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T14:15:42.676754-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T14:15:42.676754-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>,
+2015-10-22 14:15:49,506 [11] ERROR Exceptions - Object reference not set to an instance of an object.Stack Trace :    at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 27
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__2.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 23
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-22 14:18:04,791 [13] INFO  RequestResponse - URL: http://localhost:38499/Claims/CreateClaim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>sample string 5</cla:Status>
+  <cla:LossDate>2015-10-22T14:17:58.8583708-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-22T14:17:58.8593709-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T14:17:58.8613711-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T14:17:58.8613711-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>,
+2015-10-22 14:26:06,707 [13] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/CreateClaim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>sample string 5</cla:Status>
+  <cla:LossDate>2015-10-22T14:25:59.704891-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-22T14:25:59.704891-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T14:25:59.705891-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T14:25:59.705891-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: OK ResponseBody: 
+
+2015-10-22 16:24:18,265 [13] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Id/1 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: NotFound ResponseBody: 
+
+2015-10-22 16:24:33,175 [13] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>sample string 5</cla:Status>
+  <cla:LossDate>2015-10-22T16:24:02.4137492-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-22T16:24:02.4137492-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T16:24:02.4177492-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-22T16:24:02.4177492-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: OK ResponseBody: 
+
+2015-10-22 16:24:48,131 [13] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Id/1 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: NotFound ResponseBody: 
+
+2015-10-22 16:25:03,218 [10] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Id/1 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: NotFound ResponseBody: 
+
+2015-10-22 16:25:38,796 [12] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Id/9 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: OK ResponseBody: <?xml version="1.0" encoding="utf-8"?><cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim"><cla:ClaimId>9</cla:ClaimId><cla:ClaimNumber>sample string 2</cla:ClaimNumber><cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName><cla:ClaimantLastName>sample string 4</cla:ClaimantLastName><cla:Status>sample string 5</cla:Status><cla:LossDate>2015-10-22T16:24:02.413</cla:LossDate><cla:LossInfo><cla:CauseOfLoss>sample string 1</cla:CauseOfLoss><cla:ReportedDate>2015-10-22T16:24:02.413</cla:ReportedDate><cla:LossDescription>sample string 2</cla:LossDescription></cla:LossInfo><cla:AssignedAdjusterID>1</cla:AssignedAdjusterID><cla:Vehicles><cla:VehicleDetails><cla:VehicleId>16</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-22T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails><cla:VehicleDetails><cla:VehicleId>17</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-22T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails></cla:Vehicles></cla:MitchellClaim>
+
+2015-10-22 16:27:56,793 [10] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/LossDate/2015-09-01/2015-09-31 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: BadRequest ResponseBody: <?xml version="1.0" encoding="utf-8"?><Error><Message>The request is invalid.</Message><MessageDetail>The parameters dictionary contains a null entry for parameter 'maxDate' of non-nullable type 'System.DateTime' for method 'System.Web.Http.IHttpActionResult GetClaimByLossDate(System.DateTime, System.DateTime)' in 'ProcessClaimService.Controllers.ClaimController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.</MessageDetail></Error>
+
+2015-10-22 16:28:28,359 [7] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/LossDate/2015-09-01/2015-09-30 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: NotFound ResponseBody: 
+
+2015-10-22 16:29:20,291 [23] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/LossDate/2015-09-01/2015-09-30 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: NotFound ResponseBody: 
+
+2015-10-22 16:29:31,683 [23] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/LossDate/2015-09-01/2015-10-30 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: OK ResponseBody: <?xml version="1.0" encoding="utf-8"?><ArrayOfClaim xmlns:cla="http://www.mitchell.com/examples/claim"><Claim><cla:ClaimId>9</cla:ClaimId><cla:ClaimNumber>sample string 2</cla:ClaimNumber><cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName><cla:ClaimantLastName>sample string 4</cla:ClaimantLastName><cla:Status>sample string 5</cla:Status><cla:LossDate>2015-10-22T16:24:02.413</cla:LossDate><cla:LossInfo><cla:CauseOfLoss>sample string 1</cla:CauseOfLoss><cla:ReportedDate>2015-10-22T16:24:02.413</cla:ReportedDate><cla:LossDescription>sample string 2</cla:LossDescription></cla:LossInfo><cla:AssignedAdjusterID>1</cla:AssignedAdjusterID><cla:Vehicles><cla:VehicleDetails><cla:VehicleId>16</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-22T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails><cla:VehicleDetails><cla:VehicleId>17</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-22T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails></cla:Vehicles></Claim></ArrayOfClaim>
+
+2015-10-22 16:31:37,515 [21] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <?xml version="1.0" encoding="UTF-8"?>
+<cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim" >
+  <cla:ClaimNumber>22c9c23bac142856018ce14a26b6c299</cla:ClaimNumber>
+  <cla:ClaimantFirstName>George</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>Washington</cla:ClaimantLastName>
+  <cla:Status>OPEN</cla:Status>
+  <cla:LossDate>2014-07-09T17:19:13.631-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>Collision</cla:CauseOfLoss>
+    <cla:ReportedDate>2014-07-10T17:19:13.676-07:00</cla:ReportedDate>
+    <cla:LossDescription>Crashed into an apple tree.</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>12345</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:Vin>1M8GDM9AXKP042788</cla:Vin>
+      <cla:ModelYear>2015</cla:ModelYear>
+      <cla:MakeDescription>Ford</cla:MakeDescription>
+      <cla:ModelDescription>Mustang</cla:ModelDescription>
+      <cla:EngineDescription>EcoBoost</cla:EngineDescription>
+      <cla:ExteriorColor>Deep Impact Blue</cla:ExteriorColor>
+      <cla:LicPlate>NO1PRES</cla:LicPlate>
+      <cla:LicPlateState>VA</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-03-10-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>Front end smashed in. Apple dents in roof.</cla:DamageDescription>
+      <cla:Mileage>1776</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+
+Response Details: 
+StratusCode: OK ResponseBody: 
+
+2015-10-22 16:33:06,786 [23] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-22 16:47:40,305 [9] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-23 14:25:21,470 [14] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN</cla:Status>
+  <cla:LossDate>2015-10-23T14:25:14.5451633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:25:14.5451633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:25:14.5481633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:25:14.5481633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: OK ResponseBody: 
+
+2015-10-23 14:25:43,966 [12] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN2</cla:Status>
+  <cla:LossDate>2015-10-23T14:25:14.5451633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:25:14.5451633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:25:14.5481633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:25:14.5481633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:27:49,640 [14] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:LossDate>2015-10-23T14:27:38.7811633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:27:38.7811633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:28:37,459 [13] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:LossDate>2015-10-23T14:27:38.7811633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:27:38.7811633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:28:46,462 [15] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN2</cla:Status>
+  <cla:LossDate>2015-10-23T14:27:38.7811633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:27:38.7811633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:28:54,645 [16] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN2</cla:Status>
+  <cla:LossDate>2015-10-23T14:27:38.7811633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:27:38.7811633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:29:08,072 [16] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+
+  <cla:LossDate>2015-10-23T14:27:38.7811633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:27:38.7811633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:27:38.7821633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:37:18,142 [12] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN1</cla:Status>
+  <cla:LossDate>2015-10-23T14:37:07.4111633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:37:07.4111633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:37:07.4131633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:37:07.4131633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:37:23,861 [8] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN2</cla:Status>
+  <cla:LossDate>2015-10-23T14:37:07.4111633-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:37:07.4111633-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:37:07.4131633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:37:07.4131633-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 14:37:30,506 [14] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-23 14:38:29,981 [20] ERROR Exceptions - One or more errors occurred.Stack Trace :    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ProcessClaimService.LogRequestAndResponseHandler.<>c__DisplayClass1.<SendAsync>b__0(Task`1 task) in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 31
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProcessClaimService.LogRequestAndResponseHandler.<SendAsync>d__3.MoveNext() in c:\Personal\ProcessClaimService\ProcessClaimService\Filters\LogRequestAndResponseHandler.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2015-10-23 14:52:47,478 [14] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+
+  <cla:LossDate>2015-10-23T14:52:34.2210875-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:52:34.2210875-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:52:34.2220876-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:52:34.2220876-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: OK ResponseBody: 
+
+2015-10-23 14:53:07,509 [10] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/ClaimNo/sample%20string%202 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: OK ResponseBody: <?xml version="1.0" encoding="utf-8"?><cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim"><cla:ClaimId>1</cla:ClaimId><cla:ClaimNumber>sample string 2</cla:ClaimNumber><cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName><cla:ClaimantLastName>sample string 4</cla:ClaimantLastName><cla:Status>OPEN</cla:Status><cla:LossDate>2015-10-23T14:25:14.547</cla:LossDate><cla:LossInfo><cla:CauseOfLoss>sample string 1</cla:CauseOfLoss><cla:ReportedDate>2015-10-23T14:25:14.547</cla:ReportedDate><cla:LossDescription>sample string 2</cla:LossDescription></cla:LossInfo><cla:AssignedAdjusterID>1</cla:AssignedAdjusterID><cla:Vehicles><cla:VehicleDetails><cla:VehicleId>1</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-23T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails><cla:VehicleDetails><cla:VehicleId>2</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-23T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails></cla:Vehicles></cla:MitchellClaim>
+
+2015-10-23 14:56:03,615 [14] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN52</cla:Status>
+  <cla:LossDate>2015-10-23T14:55:55.1171751-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T14:55:55.1181752-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:55:55.1191753-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T14:55:55.1191753-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: <?xml version="1.0" encoding="utf-8"?><Error><Message>The request is invalid.</Message><ModelState><claim>There is an error in XML document (2, 3).</claim></ModelState></Error>
+
+2015-10-23 15:00:43,197 [10] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN52</cla:Status>
+  <cla:LossDate>2015-10-23T15:00:36.0122618-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T15:00:36.0122618-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:00:36.0132619-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:00:36.0132619-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: <?xml version="1.0" encoding="utf-8"?><Error><Message>
+</Message></Error>
+
+2015-10-23 15:08:16,541 [25] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN52</cla:Status>
+  <cla:LossDate>2015-10-23T15:00:36.0122618-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>sample string 1</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T15:00:36.0122618-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 2</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:00:36.0132619-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:00:36.0132619-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: <?xml version="1.0" encoding="utf-8"?><Error><Message>
+</Message></Error>
+
+2015-10-23 15:31:01,604 [9] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN</cla:Status>
+  <cla:LossDate>2015-10-23T15:30:42.8939319-07:00</cla:LossDate>
+  <cla:LossInfo>
+  
+    <cla:ReportedDate>2015-10-23T15:30:42.8939319-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 1</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:30:42.894932-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:30:42.894932-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: OK ResponseBody: 
+
+2015-10-23 15:31:10,152 [9] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN</cla:Status>
+  <cla:LossDate>2015-10-23T15:30:42.8939319-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>Collision4</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T15:30:42.8939319-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 1</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:30:42.894932-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T15:30:42.894932-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+
+2015-10-23 17:01:40,366 [5] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+  <cla:ClaimNumber>sample string 2</cla:ClaimNumber>
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN</cla:Status>
+  <cla:LossDate>2015-10-23T17:01:33.3681368-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>Collision</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T17:01:33.3681368-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 1</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T17:01:33.3711368-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T17:01:33.3711368-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: Created ResponseBody: <?xml version="1.0" encoding="utf-8"?><cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim"><cla:ClaimId>1</cla:ClaimId><cla:ClaimNumber>sample string 2</cla:ClaimNumber><cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName><cla:ClaimantLastName>sample string 4</cla:ClaimantLastName><cla:Status>OPEN</cla:Status><cla:LossDate>2015-10-23T17:01:33.3681368-07:00</cla:LossDate><cla:LossInfo><cla:CauseOfLoss>Collision</cla:CauseOfLoss><cla:ReportedDate>2015-10-23T17:01:33.3681368-07:00</cla:ReportedDate><cla:LossDescription>sample string 1</cla:LossDescription></cla:LossInfo><cla:AssignedAdjusterID>1</cla:AssignedAdjusterID><cla:Vehicles><cla:VehicleDetails><cla:VehicleId>1</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-23T17:01:33.3711368-07:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails><cla:VehicleDetails><cla:VehicleId>1</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-23T17:01:33.3711368-07:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails></cla:Vehicles></cla:MitchellClaim>
+
+2015-10-23 17:04:18,107 [7] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/ClaimNo/sample%20string%202 Method: GET, Route: , RequestContent: 
+Response Details: 
+StratusCode: OK ResponseBody: <?xml version="1.0" encoding="utf-8"?><cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim"><cla:ClaimId>5</cla:ClaimId><cla:ClaimNumber>sample string 2</cla:ClaimNumber><cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName><cla:ClaimantLastName>sample string 4</cla:ClaimantLastName><cla:Status>OPEN</cla:Status><cla:LossDate>2015-10-23T15:30:42.893</cla:LossDate><cla:LossInfo><cla:CauseOfLoss d3p1:nil="true" xmlns:d3p1="http://www.w3.org/2001/XMLSchema-instance" /><cla:ReportedDate>2015-10-23T15:30:42.893</cla:ReportedDate><cla:LossDescription>sample string 1</cla:LossDescription></cla:LossInfo><cla:AssignedAdjusterID>1</cla:AssignedAdjusterID><cla:Vehicles><cla:VehicleDetails><cla:VehicleId>5</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-23T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails><cla:VehicleDetails><cla:VehicleId>6</cla:VehicleId><cla:ModelYear>2</cla:ModelYear><cla:MakeDescription>sample string 3</cla:MakeDescription><cla:ModelDescription>sample string 4</cla:ModelDescription><cla:EngineDescription>sample string 5</cla:EngineDescription><cla:ExteriorColor>sample string 6</cla:ExteriorColor><cla:Vin>sample string 7</cla:Vin><cla:LicPlate>sample string 8</cla:LicPlate><cla:LicPlateState>sample string 9</cla:LicPlateState><cla:LicPlateExpDate>2015-10-23T00:00:00</cla:LicPlateExpDate><cla:DamageDescription>sample string 10</cla:DamageDescription><cla:Mileage>1</cla:Mileage></cla:VehicleDetails></cla:Vehicles></cla:MitchellClaim>
+
+2015-10-23 17:30:10,302 [10] INFO  RequestResponse - Request Details: 
+URL: http://localhost:38499/Claims/Claim Method: POST, Route: , RequestContent: <cla:MitchellClaim xmlns:cla="http://www.mitchell.com/examples/claim">
+  <cla:ClaimId>1</cla:ClaimId>
+
+  <cla:ClaimantFirstName>sample string 3</cla:ClaimantFirstName>
+  <cla:ClaimantLastName>sample string 4</cla:ClaimantLastName>
+  <cla:Status>OPEN</cla:Status>
+  <cla:LossDate>2015-10-23T17:30:02.0934675-07:00</cla:LossDate>
+  <cla:LossInfo>
+    <cla:CauseOfLoss>Collision</cla:CauseOfLoss>
+    <cla:ReportedDate>2015-10-23T17:30:02.0934675-07:00</cla:ReportedDate>
+    <cla:LossDescription>sample string 1</cla:LossDescription>
+  </cla:LossInfo>
+  <cla:AssignedAdjusterID>1</cla:AssignedAdjusterID>
+  <cla:Vehicles>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T17:30:02.0954679-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+    <cla:VehicleDetails>
+      <cla:VehicleId>1</cla:VehicleId>
+      <cla:ModelYear>2</cla:ModelYear>
+      <cla:MakeDescription>sample string 3</cla:MakeDescription>
+      <cla:ModelDescription>sample string 4</cla:ModelDescription>
+      <cla:EngineDescription>sample string 5</cla:EngineDescription>
+      <cla:ExteriorColor>sample string 6</cla:ExteriorColor>
+      <cla:Vin>sample string 7</cla:Vin>
+      <cla:LicPlate>sample string 8</cla:LicPlate>
+      <cla:LicPlateState>sample string 9</cla:LicPlateState>
+      <cla:LicPlateExpDate>2015-10-23T17:30:02.0954679-07:00</cla:LicPlateExpDate>
+      <cla:DamageDescription>sample string 10</cla:DamageDescription>
+      <cla:Mileage>1</cla:Mileage>
+    </cla:VehicleDetails>
+  </cla:Vehicles>
+</cla:MitchellClaim>
+Response Details: 
+StratusCode: BadRequest ResponseBody: 
+

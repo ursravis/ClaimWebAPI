@@ -1,0 +1,11 @@
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\ClaimBussinessServices.dll
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\ClaimBussinessServices.pdb
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\ClaimBusinessEntities.dll
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\ClaimDataAccess.dll
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\EntityFramework.dll
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\ClaimBusinessEntities.pdb
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\ClaimDataAccess.pdb
+C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\EntityFramework.xml
+C:\Personal\ProcessClaimService\ClaimBussinessServices\obj\Debug\ClaimBusinessServices.csprojResolveAssemblyReference.cache
+C:\Personal\ProcessClaimService\ClaimBussinessServices\obj\Debug\ClaimBussinessServices.dll
+C:\Personal\ProcessClaimService\ClaimBussinessServices\obj\Debug\ClaimBussinessServices.pdb

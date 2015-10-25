@@ -1,0 +1,4 @@
+C:\Personal\ProcessClaimService\ClaimBusinessEntities\bin\Debug\ClaimBusinessEntities.dll
+C:\Personal\ProcessClaimService\ClaimBusinessEntities\bin\Debug\ClaimBusinessEntities.pdb
+C:\Personal\ProcessClaimService\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.dll
+C:\Personal\ProcessClaimService\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.pdb

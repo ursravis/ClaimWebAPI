@@ -50,5 +50,5 @@ Data Model
 --------------------
 This is the Databse table structure to store claim information.
 
-![alt tag](https://github.com/)
+![alt tag](https://github.com/ursravis/ClaimWebAPI/blob/master/DataModel.png)
 

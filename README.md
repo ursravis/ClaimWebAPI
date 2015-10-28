@@ -16,15 +16,16 @@ Usage
 - You should able to find a **Test API** button at bottom right corner of the page.
 - A popup box will appear to test API method upon clicking above mentioned button.
 
-Technologies
+Technologies & Patterns
 --------------------
 
-- ASP.Net WebAPI2.
+- WebAPI2 With ASP.Net MVC Framework.
 - C# Language.
+- Repository Pattern.
 - Sql Server Local dababase file(.mdf) 
 - Entity Framework.
-- Ninject.
-- Microsoft UnitTesting Framework.
+- Dependency injection With Ninject.
+- Microsoft UnitTesting Framework With MOQ.
 
 WebService REST Endpoints
 --------------------
@@ -44,6 +45,7 @@ Other Details
 - Assuming that user will pass date in the format of YYYY-MM-DD or MM-DD-YYYY while calling Claims/LossDate.
 - I have incorporated Validations that are mentioned in the XSD. However I can extend it more if required to implement any other validations.
 - I have used Sql serve local MDF file to store claim data. I have placed this file in ProcessClaimService/App_Data.
+- I can extend this API more depending upon furthur requirements.
 
 
 Data Model

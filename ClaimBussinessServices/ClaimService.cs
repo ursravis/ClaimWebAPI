@@ -29,7 +29,10 @@ namespace ClaimBusinessServices
 
             var dbClaim = Mapper.ConverBusinessToDBEntity(claim);
             isSuccess = repository.CreateClaim(dbClaim);
-
+            if(isSuccess)
+            {
+                claim.ClaimId = dbClaim.ClaimId;
+            }
 
             return isSuccess;
         }

@@ -84,16 +84,17 @@ namespace ProcessClaimService.Controllers
                 return NotFound();
             }
         }
+
         /// <summary>
         /// Gets the claim by loss date.
         /// </summary>
-        /// <param name="minDate">The minimum date.</param>
-        /// <param name="maxDate">The maximum date.</param>
+        /// <param name="fromDate">From date.</param>
+        /// <param name="toDate">To date.</param>
         /// <returns></returns>
-        [Route("LossDate/{minDate}/{maxDate}")]
-        public IHttpActionResult GetClaimByLossDate(DateTime minDate, DateTime maxDate)
+        [Route("LossDate/{fromDate}/{toDate}")]
+        public IHttpActionResult GetClaimByLossDate(DateTime fromDate, DateTime toDate)
         {
-            var claims = claimService.GetClaimByLossDate(minDate, maxDate);
+            var claims = claimService.GetClaimByLossDate(fromDate, toDate);
             if (claims != null)
             {
                 return Ok(claims.ToList());
@@ -110,7 +111,7 @@ namespace ProcessClaimService.Controllers
         /// <param name="claimNo">The claim no.</param>
         /// <returns></returns>
         [Route("Claim/{claimNo}/Vehicle/{vin}")]
-        public IHttpActionResult GetVehicleOfClaim(string vin, string claimNo)
+        public IHttpActionResult GetVehicleOfClaim( string claimNo,string vin)
         {
             var vehicle = claimService.GetVehicleOfClaim(vin, claimNo);
             if (vehicle != null)

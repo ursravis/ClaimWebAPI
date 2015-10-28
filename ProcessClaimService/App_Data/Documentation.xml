@@ -539,8 +539,8 @@
             <summary>
             Gets the claim by loss date.
             </summary>
-            <param name="minDate">The minimum date.</param>
-            <param name="maxDate">The maximum date.</param>
+            <param name="fromDate">From date.</param>
+            <param name="toDate">To date.</param>
             <returns></returns>
         </member>
         <member name="M:ProcessClaimService.Controllers.ClaimController.GetVehicleOfClaim(System.String,System.String)">

@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace ClaimBusinessEntities
 {
-  [XmlRoot("MitchellClaim", Namespace = "http://www.mitchell.com/examples/claim")]
+  [XmlRoot("Claim", Namespace = "http://www.test.com/examples/claim")]
     public class Claim
     {
 

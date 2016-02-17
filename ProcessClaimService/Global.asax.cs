@@ -20,7 +20,7 @@ namespace ProcessClaimService
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             var xmlFormatter = new NamespacedXmlMediaTypeFormatter() { UseXmlSerializer = true };
-            xmlFormatter.Namespaces.Add("cla", "http://www.mitchell.com/examples/claim");
+            xmlFormatter.Namespaces.Add("cla", "http://www.test.com/examples/claim");
             GlobalConfiguration.Configuration.Formatters.Insert(0, xmlFormatter);
            
             //GlobalConfiguration.Configuration.Formatters.Clear();

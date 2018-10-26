@@ -1,0 +1,326 @@
+Description: >
+    This template deploys an ECS cluster to the provided VPC and subnets 
+    using an Auto Scaling Group
+
+Parameters:
+
+    EnvironmentName:
+        Description: An environment name that will be prefixed to resource names
+        Type: String
+
+    InstanceType: 
+        Description: Which instance type should we use to build the ECS cluster?
+        Type: String
+        Default: t2.large
+
+    ClusterSize:
+        Description: How many ECS hosts do you want to initially deploy?
+        Type: Number
+        Default: 1
+
+    VPCId:
+        Description: Choose which VPC this ECS cluster should be deployed to
+        Type: AWS::EC2::VPC::Id
+
+    PrivateSubnets:
+        Description: Choose which subnets this ECS cluster should be deployed to
+        Type: List<AWS::EC2::Subnet::Id>
+    PublicSubnets:
+        Description: Choose which subnets this ELB should be availble
+        Type: List<AWS::EC2::Subnet::Id>
+
+    KeyPairName:
+        Description: KeyPair to attach
+        Type: String
+
+    PrivateIpAddress:
+        Description: Ip address range to allow in security group
+        Type: String
+        Default: 0.0.0.0/0
+
+Mappings:
+
+    # These are the latest ECS optimized AMIs as of [DATE]:
+    #
+    #   Windows_Server-2016-English-Full-ECS_Optimized-2017.11.24
+    #   ECS agent:     
+    #   Docker: 17.06.2-ee-5      
+    #   ecs-init:     
+    #
+    # You can find the latest available on this page of our documentation:
+    # http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html
+    # (note the AMI identifier is region specific) 
+
+    AWSRegionToAMI:
+        us-west-2:
+            AMI: ami-b81048c0
+        us-west-1:
+            AMI: ami-034ba660
+        us-east-2:
+            AMI: ami-7cecd619
+        us-east-1:
+            AMI: ami-884e41f7
+        eu-west-2: 
+            AMI: ami-702fc517
+        eu-west-1:
+            AMI: ami-034ba660
+        eu-central-1:
+            AMI: ami-8017156b
+        ca-central-1:
+            AMI: ami-adbb36c9
+        ap-southeast-2: 
+            AMI: ami-26bd1b44
+        ap-southeast-1:
+            AMI: ami-dabdfb30
+        ap-northeast-2:
+            AMI: ami-725fe81c
+        ap-northeast-1:
+            AMI: ami-005621ed
+
+Resources:
+
+    ECSCluster:
+        Type: AWS::ECS::Cluster
+        Properties:
+            ClusterName: !Ref EnvironmentName
+
+    ECSAutoScalingGroup:
+        Type: AWS::AutoScaling::AutoScalingGroup
+        Properties: 
+            VPCZoneIdentifier: 
+                - !Select [ "0", !Ref PrivateSubnets ] 
+            LaunchConfigurationName: !Ref ECSLaunchConfiguration
+            MinSize: !Ref ClusterSize
+            MaxSize: !Ref ClusterSize
+            DesiredCapacity: !Ref ClusterSize
+            TargetGroupARNs: 
+                - !Ref TargetGroup
+            Tags: 
+                - Key: Name
+                  Value: !Sub ${EnvironmentName} ECS host
+                  PropagateAtLaunch: 'true'
+        CreationPolicy:
+            ResourceSignal: 
+                Timeout: PT15M
+        UpdatePolicy:
+            AutoScalingRollingUpdate:
+                MinInstancesInService: '1'
+                MaxBatchSize: '1'
+                PauseTime: PT20M
+                WaitOnResourceSignals: 'true'
+        
+    ECSLaunchConfiguration:
+        Type: AWS::AutoScaling::LaunchConfiguration
+        Properties:
+            LaunchConfigurationName: !Sub ${EnvironmentName} ECS Launch Configuration
+            ImageId:  !FindInMap [AWSRegionToAMI, !Ref "AWS::Region", AMI]
+            InstanceType: !Ref InstanceType
+            KeyName: !Ref KeyPairName
+            SecurityGroups: 
+                - !Ref ECSInstanceSecurityGroup
+            IamInstanceProfile: !Ref ECSInstanceProfile
+            BlockDeviceMappings: 
+                - DeviceName: "/dev/sdm"
+                  Ebs: 
+                    VolumeSize: "100"
+                    DeleteOnTermination: "false"
+            #Need to someone to check this section.  Was unable to find a good example in YAML for bootstrapping an instance.
+            UserData: !Base64 
+                Fn::Join:
+                    - ''
+                    - - '<script>
+                        
+                        '
+                      - 'cfn-init.exe -v -s '
+                      - !Ref 'AWS::StackId'
+                      - ' -r ECSLaunchConfiguration'
+                      - ' --region '
+                      - !Ref 'AWS::Region'
+                      - '
+
+                        '
+                      - 'cfn-signal.exe -e %ERRORLEVEL% --stack '
+                      - !Ref 'AWS::StackName'
+                      - ' --resource ECSAutoScalingGroup '
+                      - ' --region '
+                      - !Ref 'AWS::Region'
+                      - '
+                        
+                        '
+                      - </script>
+        Metadata:
+            AWS::CloudFormation::Init:
+                config:
+                    commands:
+                        01_import_powershell_module:
+                            command: !Sub powershell.exe -Command Import-Module ECSTools
+                        02_add_instance_to_cluster:
+                            command: !Sub powershell.exe -Command Initialize-ECSAgent -Cluster ${ECSCluster} -EnableTaskIAMRole
+                    files:
+                        c:\cfn\cfn-hup.conf:
+                            content: !Join ['', ['[main]
+                                    ', stack=, !Ref 'AWS::StackId', '
+                                    ', region=, !Ref 'AWS::Region', '
+                                    ']]
+                        c:\cfn\hooks.d\cfn-auto-reloader.conf:
+                            content: !Join ['', ['[cfn-auto-reloader-hook]
+                                    ', 'triggers=post.update
+                                    ', 'path=Resources.ECSLaunchConfiguration.Metadata.AWS::CloudFormation::Init
+                                    ', 'action=cfn-init.exe -v -s ', !Ref 'AWS::StackId', ' -r ECSLaunchConfiguration',
+                                    ' --region ', !Ref 'AWS::Region', '
+                                    ']]
+                    services: 
+                        windows:
+                            cfn-hup: 
+                                enabled: 'true'
+                                ensureRunning: 'true'
+                                files: 
+                                    - c:\cfn\cfn-hup.conf
+                                    - c:\etc\cfn\hooks.d\cfn-auto-reloader.conf
+
+    # This IAM Role is attached to all of the ECS hosts. It is based on the default role
+    # published here:
+    # http://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html
+    #
+    # You can add other IAM policy statements here to allow access from your ECS hosts
+    # to other AWS services. Please note that this role will be used by ALL containers
+    # running on the ECS host.
+
+    ECSRole:
+        Type: AWS::IAM::Role
+        Properties: 
+            Path: /
+            RoleName: !Sub ${EnvironmentName}-ECSRole-${AWS::Region}
+            AssumeRolePolicyDocument: |
+                {
+                    "Statement": [{
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Principal": { 
+                            "Service": "ec2.amazonaws.com" 
+                        }
+                    }]
+                }
+            Policies: 
+                - PolicyName: ecs-service
+                  PolicyDocument: |
+                    {
+                        "Statement": [{
+                            "Effect": "Allow",
+                            "Action": [
+                                "ecs:CreateCluster",
+                                "ecs:DeregisterContainerInstance",
+                                "ecs:DiscoverPollEndpoint",
+                                "ecs:Poll",
+                                "ecs:RegisterContainerInstance",
+                                "ecs:StartTelemetrySession",
+                                "ecs:Submit*",
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents",
+                                "ecr:BatchCheckLayerAvailability",
+                                "ecr:BatchGetImage",
+                                "ecr:GetDownloadUrlForLayer",
+                                "ecr:GetAuthorizationToken",
+                                "ecr:*"
+                            ],
+                            "Resource": "*"
+                        }]
+                    }
+
+    ECSInstanceProfile: 
+        Type: AWS::IAM::InstanceProfile
+        Properties:
+            Path: /
+            Roles: 
+                - !Ref ECSRole
+    ElasticLoadBalancer:
+        Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+        Properties:
+            Name: !Sub ${EnvironmentName}-LoadBalancer
+            Scheme: "internet-facing"
+            Type: "application"
+            Subnets: !Ref PublicSubnets
+            SecurityGroups:
+                - Ref: ELBSecurityGroup
+    ELBListener:
+        Type: AWS::ElasticLoadBalancingV2::Listener
+        Properties:
+            DefaultActions:
+              - Type: forward
+                TargetGroupArn:
+                    Ref: TargetGroup
+            LoadBalancerArn: !Ref ElasticLoadBalancer
+            Port: '80'
+            Protocol: HTTP
+    TargetGroup:
+        Type: AWS::ElasticLoadBalancingV2::TargetGroup
+        Properties:
+            VpcId: !Ref VPCId
+            Port: 80
+            Protocol: HTTP
+            Matcher: 
+                HttpCode: 200-299
+            HealthCheckIntervalSeconds: 30
+            HealthCheckPath: /
+            HealthCheckProtocol: HTTP
+            HealthCheckTimeoutSeconds: 10
+            HealthyThresholdCount: 2
+            UnhealthyThresholdCount: 5
+    
+    ELBListenerRule:
+        Type: AWS::ElasticLoadBalancingV2::ListenerRule
+        Properties:
+            ListenerArn: !Ref ELBListener
+            Priority: 2
+            Conditions:
+                - Field: path-pattern
+                  Values: 
+                    -  "*"
+            Actions:
+                - TargetGroupArn: !Ref TargetGroup
+                  Type: forward
+    ELBSecurityGroup:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
+            GroupName: !Sub ${EnvironmentName}-ELBSecurityGroup
+            GroupDescription: Allow http  to ELB from specified ip range
+            VpcId: !Ref VPCId
+            SecurityGroupIngress:
+              - 
+                IpProtocol: "tcp"
+                FromPort: 80
+                ToPort: 80
+                CidrIp: !Ref PrivateIpAddress
+            SecurityGroupEgress:
+              - 
+                IpProtocol: -1
+                FromPort: -1
+                ToPort: -1
+                CidrIp: 0.0.0.0/0
+    ECSInstanceSecurityGroup:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
+            GroupName: !Sub ${EnvironmentName}-ECSInstanceSecuritygroup
+            GroupDescription: Allow http to client host from ELB
+            VpcId: !Ref VPCId
+            SecurityGroupIngress:
+              - IpProtocol: -1
+                FromPort: -1
+                ToPort: -1
+                SourceSecurityGroupId: !Ref ELBSecurityGroup
+              - IpProtocol: -1
+                FromPort: -1
+                ToPort: -1
+                CidrIp: !Ref PrivateIpAddress
+            SecurityGroupEgress:
+              - IpProtocol: -1
+                FromPort: -1
+                ToPort: -1
+                CidrIp: 0.0.0.0/0
+
+Outputs:
+
+    Cluster:
+        Description: A reference to the ECS cluster
+        Value: !Ref ECSCluster
+

@@ -2,3 +2,8 @@ C:\Personal\ProcessClaimService\ClaimBusinessEntities\bin\Debug\ClaimBusinessEnt
 C:\Personal\ProcessClaimService\ClaimBusinessEntities\bin\Debug\ClaimBusinessEntities.pdb
 C:\Personal\ProcessClaimService\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.dll
 C:\Personal\ProcessClaimService\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.pdb
+C:\GitRep\ClaimWebAPI\ClaimBusinessEntities\bin\Debug\ClaimBusinessEntities.dll
+C:\GitRep\ClaimWebAPI\ClaimBusinessEntities\bin\Debug\ClaimBusinessEntities.pdb
+C:\GitRep\ClaimWebAPI\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.csproj.CoreCompileInputs.cache
+C:\GitRep\ClaimWebAPI\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.dll
+C:\GitRep\ClaimWebAPI\ClaimBusinessEntities\obj\Debug\ClaimBusinessEntities.pdb

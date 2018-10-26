@@ -9,3 +9,17 @@ C:\Personal\ProcessClaimService\ClaimBussinessServices\bin\Debug\EntityFramework
 C:\Personal\ProcessClaimService\ClaimBussinessServices\obj\Debug\ClaimBusinessServices.csprojResolveAssemblyReference.cache
 C:\Personal\ProcessClaimService\ClaimBussinessServices\obj\Debug\ClaimBussinessServices.dll
 C:\Personal\ProcessClaimService\ClaimBussinessServices\obj\Debug\ClaimBussinessServices.pdb
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimBussinessServices.dll
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimBussinessServices.pdb
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimBusinessEntities.dll
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimDataAccess.dll
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\EntityFramework.dll
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimBusinessEntities.pdb
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimDataAccess.pdb
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\ClaimDataAccess.dll.config
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\bin\Debug\EntityFramework.xml
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\obj\Debug\ClaimBusinessServices.csprojAssemblyReference.cache
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\obj\Debug\ClaimBusinessServices.csproj.CoreCompileInputs.cache
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\obj\Debug\ClaimBusinessServices.csproj.CopyComplete
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\obj\Debug\ClaimBussinessServices.dll
+C:\GitRep\ClaimWebAPI\ClaimBussinessServices\obj\Debug\ClaimBussinessServices.pdb

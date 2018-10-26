@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  processclaimservice:
+    image: ${DOCKER_REGISTRY}processclaimservice
+    build:
+      context: .\ProcessClaimService
+      dockerfile: Dockerfile

@@ -5,3 +5,12 @@ C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\EntityFramework.dll
 C:\Personal\ProcessClaimService\ClaimDataAccess\bin\Debug\EntityFramework.xml
 C:\Personal\ProcessClaimService\ClaimDataAccess\obj\Debug\ClaimDataAccess.dll
 C:\Personal\ProcessClaimService\ClaimDataAccess\obj\Debug\ClaimDataAccess.pdb
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\bin\Debug\ClaimDataAccess.dll.config
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\bin\Debug\ClaimDataAccess.dll
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\bin\Debug\ClaimDataAccess.pdb
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\bin\Debug\EntityFramework.dll
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\bin\Debug\EntityFramework.xml
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\obj\Debug\ClaimDataAccess.csproj.CoreCompileInputs.cache
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\obj\Debug\ClaimDataAccess.csproj.CopyComplete
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\obj\Debug\ClaimDataAccess.dll
+C:\GitRep\ClaimWebAPI\ClaimDataAccess\obj\Debug\ClaimDataAccess.pdb
